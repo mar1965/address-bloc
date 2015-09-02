@@ -41,6 +41,15 @@ RSpec.describe AddressBook do
     end
   end
 
+  context "#annihilate" do
+    it "deletes all entries from the address book" do
+      book.import_from_csv("entries.csv")
+      expect(book.entries.size).to eq 5
+      book.annihilate
+      expect(book.entries.size).to eq 0
+    end
+  end
+
   # Test that AddressBook's .import_from_csv() method is working as expected
   context "#import_from_csv" do
     it "tests the csv import process" do

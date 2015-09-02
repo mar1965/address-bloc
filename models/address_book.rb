@@ -51,4 +51,9 @@ class AddressBook
     return nil
   end
 
+  def annihilate
+    @entries.clear
+    system "clear"
+  end
+
 end
